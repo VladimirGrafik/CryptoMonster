@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5162CE67-A544-4D07-9281-387FF93C64A4}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Components</RootNamespace>
+    <AssemblyName>Components</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4">
+      <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Jayrock, Version=0.9.16530.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\jayrock.0.9.16530.1\lib\net40\Jayrock.dll</HintPath>
+    </Reference>
+    <Reference Include="Jayrock.Json, Version=0.9.16530.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\jayrock-json.0.9.16530\lib\net40\Jayrock.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
+      <HintPath>..\packages\MySql.Data.6.7.9\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlConnector, Version=0.24.2.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\MySqlConnector.0.24.2\lib\net45\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4">
+      <HintPath>..\packages\NHibernate.4.0.0.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4">
+      <HintPath>..\packages\NHibernate.4.0.0.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\System.Buffers.4.0.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.0.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analytical\OrderBookMachine.cs" />
+    <Compile Include="Analytical\OrderBookState.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Callbacks\CurlEasyCallbacks.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Callbacks\CurlShareCallbacks.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Curl.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\CurlEasy.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\CurlHttpMultiPartForm.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\CurlMulti.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\CurlMultiInfo.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\CurlShare.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\CurlSlist.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\CurlSslContext.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\CurlVersionInfoData.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlClosePolicy.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlCode.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlFormCode.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlFormOption.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlFtpAuth.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlFtpSsl.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlHttpAuth.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlHttpVersion.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlInfo.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlInfoType.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlInitFlag.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlIoCommand.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlIoError.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlIpResolve.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlLockAccess.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlLockData.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlMessage.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlMultiCode.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlMultiOption.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlNetrcOption.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlOption.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlOptType.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlPipelining.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlProxyType.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlShareCode.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlShareOption.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlSslVersion.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlTimeCond.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlVersion.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\Enums\CurlVersionFeatureBitmask.cs" />
+    <Compile Include="CurlSharp-master\CurlSharp\NativeMethods.cs" />
+    <Compile Include="CurlSharp-master\Samples\BookPost\BookPost.cs" />
+    <Compile Include="CurlSharp-master\Samples\EasyGet\EasyGet.cs" />
+    <Compile Include="CurlSharp-master\Samples\EasyPost\EasyPost.cs" />
+    <Compile Include="CurlSharp-master\Samples\FileUpload\FileUpload.cs" />
+    <Compile Include="CurlSharp-master\Samples\Headers\Headers.cs" />
+    <Compile Include="CurlSharp-master\Samples\Http2Download\Http2Download.cs" />
+    <Compile Include="CurlSharp-master\Samples\InfoDemo\InfoDemo.cs" />
+    <Compile Include="CurlSharp-master\Samples\MultiDemo\MultiDemo.cs" />
+    <Compile Include="CurlSharp-master\Samples\ShareDemo\EasyThread.cs" />
+    <Compile Include="CurlSharp-master\Samples\ShareDemo\ShareDemo.cs" />
+    <Compile Include="CurlSharp-master\Samples\SmtpMail\SmtpMail.cs" />
+    <Compile Include="CurlSharp-master\Samples\SSLGet\SSLGet.cs" />
+    <Compile Include="CurlSharp-master\Samples\Upload\Upload.cs" />
+    <Compile Include="CurlSharp-master\Samples\VersionData\VersionData.cs" />
+    <Compile Include="CurlSharp-master\Samples\WinSamples\FormGetSource.cs" />
+    <Compile Include="CurlSharp-master\Samples\WinSamples\FormGetSource.Designer.cs" />
+    <Compile Include="CurlSharp-master\Samples\WinSamples\Program.cs" />
+    <Compile Include="CurlSharp-master\Samples\WinSamples\Properties\Resources.Designer.cs" />
+    <Compile Include="CurlSharp-master\Samples\WinSamples\Properties\Settings.Designer.cs" />
+    <Compile Include="Db\CmSetting.cs" />
+    <Compile Include="Db\CmThinking.cs" />
+    <Compile Include="Db\CmTrading.cs" />
+    <Compile Include="Db\Maps\AnalyticHistory.cs" />
+    <Compile Include="Db\Maps\CatchPairs.cs" />
+    <Compile Include="Db\Maps\DefaultMarkets.cs" />
+    <Compile Include="Db\Maps\DefaultPairs.cs" />
+    <Compile Include="Db\Maps\MarketSettings.cs" />
+    <Compile Include="Db\Maps\OrdersTrader.cs" />
+    <Compile Include="Db\Maps\SystemSettings.cs" />
+    <Compile Include="Db\NHelper.cs" />
+    <Compile Include="Helpers\UnixTime.cs" />
+    <Compile Include="Markets\AdaptersApi\Balances.cs" />
+    <Compile Include="Markets\AdaptersApi\BuySellResponse.cs" />
+    <Compile Include="Markets\AdaptersApi\OpenOrders.cs" />
+    <Compile Include="Markets\AdaptersApi\OrderBook.cs" />
+    <Compile Include="Markets\AdaptersApi\SumPairs.cs" />
+    <Compile Include="Markets\Bitfinex\Balances.cs" />
+    <Compile Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\ActiveOrdersRequest.cs" />
+    <Compile Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\ActiveOrdersResponse.cs" />
+    <Compile Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\ActivePositionsRequest.cs" />
+    <Compile Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\ActivePositionsResponse.cs" />
+    <Compile Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\BalancesRequest.cs" />
+    <Compile Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\BalancesResponse.cs" />
+    <Compile Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\BitfinexApiV1.cs" />
+    <Compile Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\BitfinexException.cs" />
+    <Compile Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\CancelAllOrdersRequest.cs" />
+    <Compile Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\CancelAllOrdersResponse.cs" />
+    <Compile Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\CancelOrderRequest.cs" />
+    <Compile Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\CancelOrderResponse.cs" />
+    <Compile Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\GenericRequest.cs" />
+    <Compile Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\NewOrderRequest.cs" />
+    <Compile Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\NewOrderResponse.cs" />
+    <Compile Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\OrderStatusRequest.cs" />
+    <Compile Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\OrderStatusResponse.cs" />
+    <Compile Include="Markets\Bitfinex\BitfinexApi.cs" />
+    <Compile Include="Markets\Bitfinex\OpenOrders.cs" />
+    <Compile Include="Markets\Bitfinex\OrderBook.cs" />
+    <Compile Include="Markets\Bitfinex\SumPairs.cs" />
+    <Compile Include="Markets\Bittrex\Balances.cs" />
+    <Compile Include="Markets\Bittrex\BittrexApi.cs" />
+    <Compile Include="Markets\Bittrex\OpenOrders.cs" />
+    <Compile Include="Markets\Bittrex\OrderBook.cs" />
+    <Compile Include="Markets\Bittrex\ResponseInfo.cs" />
+    <Compile Include="Markets\Bittrex\SumPairs.cs" />
+    <Compile Include="Markets\HttpLoader.cs" />
+    <Compile Include="Markets\MarketApi.cs" />
+    <Compile Include="Markets\Kraken\KrakenClientConsole\Helpers\Broker.cs" />
+    <Compile Include="Markets\Kraken\KrakenClientConsole\Models\CancelOrderResult.cs" />
+    <Compile Include="Markets\Kraken\KrakenClientConsole\Models\GetOrdersResult.cs" />
+    <Compile Include="Markets\Kraken\KrakenClientConsole\Models\PlaceOrderResult.cs" />
+    <Compile Include="Markets\Kraken\KrakenClientConsole\Models\RefreshOrderResult.cs" />
+    <Compile Include="Markets\Kraken\KrakenClientConsole\Program.cs" />
+    <Compile Include="Markets\Kraken\KrakenClient\KrakenClient.cs" />
+    <Compile Include="Markets\Kraken\KrakenClient\Models\KrakenOrder.cs" />
+    <Compile Include="Markets\Kraken\RateLimiting\EnumerableExtensions.cs" />
+    <Compile Include="Markets\Kraken\RateLimiting\RateGate.cs" />
+    <Compile Include="Markets\MarketApiFactory.cs" />
+    <Compile Include="Markets\StatesMachine.cs" />
+    <Compile Include="ProHub.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\Properties" />
+    <Folder Include="Markets\Kraken\KrakenClientConsole\Properties" />
+    <Folder Include="Markets\Kraken\KrakenClient\Properties" />
+    <Folder Include="Markets\Kraken\RateLimiting\Properties" />
+    <Folder Include="Markets\Poloniex" />
+    <Folder Include="Testing" />
+    <Folder Include="User" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CurlSharp-master\.gitignore" />
+    <Content Include="CurlSharp-master\CurlSharp.sln" />
+    <Content Include="CurlSharp-master\CurlSharp\CurlSharp.csproj" />
+    <Content Include="CurlSharp-master\libcurlshim\array.c" />
+    <Content Include="CurlSharp-master\libcurlshim\array.h" />
+    <Content Include="CurlSharp-master\libcurlshim\arrayrep.h" />
+    <Content Include="CurlSharp-master\libcurlshim\assert.c" />
+    <Content Include="CurlSharp-master\libcurlshim\assert.h" />
+    <Content Include="CurlSharp-master\libcurlshim\except.c" />
+    <Content Include="CurlSharp-master\libcurlshim\except.h" />
+    <Content Include="CurlSharp-master\libcurlshim\libcurlshim.c" />
+    <Content Include="CurlSharp-master\libcurlshim\libcurlshim.rc" />
+    <Content Include="CurlSharp-master\libcurlshim\libcurlshim.vcxproj" />
+    <Content Include="CurlSharp-master\libcurlshim\libcurlshim64.vcxproj" />
+    <Content Include="CurlSharp-master\libcurlshim\list.c" />
+    <Content Include="CurlSharp-master\libcurlshim\list.h" />
+    <Content Include="CurlSharp-master\libcurlshim\mem.c" />
+    <Content Include="CurlSharp-master\libcurlshim\mem.h" />
+    <Content Include="CurlSharp-master\libcurlshim\resource.h" />
+    <Content Include="CurlSharp-master\libcurlshim\seq.c" />
+    <Content Include="CurlSharp-master\libcurlshim\seq.h" />
+    <Content Include="CurlSharp-master\libcurlshim\table.c" />
+    <Content Include="CurlSharp-master\libcurlshim\table.h" />
+    <Content Include="CurlSharp-master\libs\amd64\curl-ca-bundle.crt" />
+    <Content Include="CurlSharp-master\libs\amd64\libcrypto-1_1-x64.dll" />
+    <Content Include="CurlSharp-master\libs\amd64\libcurl.dll" />
+    <Content Include="CurlSharp-master\libs\amd64\libssh2.dll" />
+    <Content Include="CurlSharp-master\libs\amd64\libssl-1_1-x64.dll" />
+    <Content Include="CurlSharp-master\libs\i386\curl-ca-bundle.crt" />
+    <Content Include="CurlSharp-master\libs\i386\libcrypto-1_1.dll" />
+    <Content Include="CurlSharp-master\libs\i386\libcurl.dll" />
+    <Content Include="CurlSharp-master\libs\i386\libcurlshim.dll" />
+    <Content Include="CurlSharp-master\libs\i386\libssh2.dll" />
+    <Content Include="CurlSharp-master\libs\i386\libssl-1_1.dll" />
+    <Content Include="CurlSharp-master\LICENSE" />
+    <Content Include="CurlSharp-master\README.md" />
+    <Content Include="CurlSharp-master\Samples\BookPost\BookPost.csproj" />
+    <Content Include="CurlSharp-master\Samples\EasyGet\EasyGet.csproj" />
+    <Content Include="CurlSharp-master\Samples\EasyPost\EasyPost.csproj" />
+    <Content Include="CurlSharp-master\Samples\EasyPost\testpost.php" />
+    <Content Include="CurlSharp-master\Samples\FileUpload\FileUpload.csproj" />
+    <Content Include="CurlSharp-master\Samples\Headers\Headers.csproj" />
+    <Content Include="CurlSharp-master\Samples\Http2Download\Http2Download.csproj" />
+    <Content Include="CurlSharp-master\Samples\InfoDemo\InfoDemo.csproj" />
+    <Content Include="CurlSharp-master\Samples\MultiDemo\MultiDemo.csproj" />
+    <Content Include="CurlSharp-master\Samples\ReadMe.samples" />
+    <Content Include="CurlSharp-master\Samples\ShareDemo\ShareDemo.csproj" />
+    <Content Include="CurlSharp-master\Samples\SmtpMail\SmtpMail.csproj" />
+    <Content Include="CurlSharp-master\Samples\SSLGet\SSLGet.csproj" />
+    <Content Include="CurlSharp-master\Samples\Upload\Upload.csproj" />
+    <Content Include="CurlSharp-master\Samples\VersionData\VersionData.csproj" />
+    <Content Include="CurlSharp-master\Samples\WinSamples\app.config" />
+    <Content Include="CurlSharp-master\Samples\WinSamples\FormGetSource.resx" />
+    <Content Include="CurlSharp-master\Samples\WinSamples\Properties\Resources.resx" />
+    <Content Include="CurlSharp-master\Samples\WinSamples\Properties\Settings.settings" />
+    <Content Include="CurlSharp-master\Samples\WinSamples\WinSamples.csproj" />
+    <Content Include="Db\dbConnections.json" />
+    <Content Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApi.sln" />
+    <Content Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApi.suo" />
+    <Content Include="Markets\Bitfinex\BitfinexAPI-master\BitfinexApiV\BitfinexApi.csproj" />
+    <Content Include="Markets\Bitfinex\BitfinexAPI-master\README.md" />
+    <Content Include="Markets\Kraken\.gitignore" />
+    <Content Include="Markets\Kraken\KrakenAPI.sln" />
+    <Content Include="Markets\Kraken\KrakenClientConsole\KrakenClientConsole.csproj" />
+    <Content Include="Markets\Kraken\KrakenClientConsole\packages.config" />
+    <Content Include="Markets\Kraken\KrakenClient\KrakenClient.csproj" />
+    <Content Include="Markets\Kraken\KrakenClient\packages.config" />
+    <Content Include="Markets\Kraken\licence.txt" />
+    <Content Include="Markets\Kraken\packages\Newtonsoft.Json.6.0.1\lib\net20\Newtonsoft.Json.dll" />
+    <Content Include="Markets\Kraken\packages\Newtonsoft.Json.6.0.1\lib\net20\Newtonsoft.Json.xml" />
+    <Content Include="Markets\Kraken\packages\Newtonsoft.Json.6.0.1\lib\net35\Newtonsoft.Json.dll" />
+    <Content Include="Markets\Kraken\packages\Newtonsoft.Json.6.0.1\lib\net35\Newtonsoft.Json.xml" />
+    <Content Include="Markets\Kraken\packages\Newtonsoft.Json.6.0.1\lib\net40\Newtonsoft.Json.dll" />
+    <Content Include="Markets\Kraken\packages\Newtonsoft.Json.6.0.1\lib\net40\Newtonsoft.Json.xml" />
+    <Content Include="Markets\Kraken\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll" />
+    <Content Include="Markets\Kraken\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.xml" />
+    <Content Include="Markets\Kraken\packages\Newtonsoft.Json.6.0.1\lib\netcore45\Newtonsoft.Json.dll" />
+    <Content Include="Markets\Kraken\packages\Newtonsoft.Json.6.0.1\lib\netcore45\Newtonsoft.Json.xml" />
+    <Content Include="Markets\Kraken\packages\Newtonsoft.Json.6.0.1\lib\portable-net40+sl5+wp80+win8+monotouch+monoandroid\Newtonsoft.Json.dll" />
+    <Content Include="Markets\Kraken\packages\Newtonsoft.Json.6.0.1\lib\portable-net40+sl5+wp80+win8+monotouch+monoandroid\Newtonsoft.Json.xml" />
+    <Content Include="Markets\Kraken\packages\Newtonsoft.Json.6.0.1\lib\portable-net45+wp80+win8\Newtonsoft.Json.dll" />
+    <Content Include="Markets\Kraken\packages\Newtonsoft.Json.6.0.1\lib\portable-net45+wp80+win8\Newtonsoft.Json.xml" />
+    <Content Include="Markets\Kraken\packages\Newtonsoft.Json.6.0.1\Newtonsoft.Json.6.0.1.nupkg" />
+    <Content Include="Markets\Kraken\packages\Newtonsoft.Json.6.0.1\Newtonsoft.Json.6.0.1.nuspec" />
+    <Content Include="Markets\Kraken\packages\Newtonsoft.Json.6.0.1\tools\install.ps1" />
+    <Content Include="Markets\Kraken\packages\repositories.config" />
+    <Content Include="Markets\Kraken\RateLimiting\RateLimiting.csproj" />
+    <Content Include="Markets\Kraken\RateLimiting\RateLimiting.sln" />
+    <Content Include="Markets\Kraken\README.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
